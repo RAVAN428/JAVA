@@ -1,34 +1,6 @@
-/*interface depeartment*/
-interface Department
-{
-int m1=18,m2=19,m3=12;
-}
-interface Exam extends Department
-{
-int s1=67,s2=45,s3=71;
-void total_marks();
-}
-class Student_inter implements Department,Exam
-{
-public void total_marks()
-{
+1. WAP to implement person -> Employee details.
 
-int ds,cg,dlca;
-ds=m1+s1;
-cg=m2+s2;
-dlca=m3+s3;
-System.out.println("Marks of DS"+ds);
-System.out.println("Marks of CG"+cg);
-System.out.println("Marks of DLCA"+dlca);
-}
-public static void main(String args[])
-{
-Student_inter s=new Student_inter();
-s.total_marks();
-}
-}
-
-/*employee*/
+Program:
 
 class Person
 {
@@ -42,7 +14,6 @@ this.dob=dob;
 }
 void print_data()
 {
-
 System.out.println("Name:"+name);
 System.out.println("Mobile number:"+mno);
 System.out.println("Date of birth:"+dob);
@@ -66,12 +37,11 @@ void print_info()
 super.print_data();
 System.out.println("Emp number:"+eno);
 System.out.println("Organization Name:"+org);
-System.out.println("Designation:"+org);
-System.out.println("Date of birth:"+dob);
+System.out.println("Designation:"+des);
+System.out.println("Date of Joining:"+doj);
+System.out.println("Salary:"+salary);
 }
-
 }
-
 class Imple_exam
 {
 public static void main(String args[])
@@ -81,21 +51,26 @@ e.print_info();
 }
 }
 
-/*count of vowels*/
+
+-------------------------------------------------------------
+
+
+2. WAP to print the count of vowels in a given string.
+
+Program:
+
 import java.lang.*;
 import java.util.*;
 class Count_vowels
 {
 public static void main(String args[])
 {
-
 String msg,str;
 Scanner s=new Scanner(System.in);
 System.out.println("The given String is: ");
 msg=s.nextLine();
 str=msg.toLowerCase();
-
-int i,c = 0;
+int i,c=0;
 char ch;
 for(i=0;i<str.length();i++)
 {
@@ -105,18 +80,24 @@ if(ch=='a'||ch=='e'||ch=='o'||ch=='i'||ch=='u')
 c++;
 }
 }
-
-System.out.println("Number of vowels in given string: " +c);
+System.out.println("Number of vowels in given string: "+c);
 }
 }
 
-/*area*/
+
+---------------------------------------------------------------
+
+
+3. Write a program to find area of circle, area of rectangle & area of
+triangle by overloading functions.
+
+Program: 
+
 import java.lang.*;
 class Shape
 {
 void area(int r)
 {
-
 double a;
 a=3.14*r*r;
 System.out.println("Area of circle is"+a);
@@ -138,24 +119,31 @@ class Area_tri
 {
 public static void main(String args[])
 {
-
 Shape s=new Shape();
 s.area(3);
 s.area(3,4);
-s.area(2.0f,5.0f );
+s.area(2.0f,5.0f);
 }
 }
 
-/*exception*/
+
+----------------------------------------------------------------
+
+
+4. Write a program to demonstrate exception handling using try,
+catch and finally block for ArrayIndexOutOfBoundsException.
+
+Program:
+
 class Demo_exception
 {
 public static void main (String[] args)
 {
-int a[] ={5,10};
+int a[]={5,10};
 int b=5;
 try
 {
-int x = a[2]/(b-a[1]);
+int x=a[2]/(b-a[1]);
 }
 catch(ArrayIndexOutOfBoundsException e)
 {
@@ -170,7 +158,16 @@ System.out.println(y);
 }
 }
 
-/*5 names of students*/
+
+---------------------------------------------------------------
+
+
+5. WAP uses a vector class to add 5 names of students initially.
+Display a MENU: i) Add new name ii) Display names
+Based on the choice entered by the user take appropriate action.
+
+Program: 
+
 import java.util.*;
 class Student_vector
 {
@@ -193,13 +190,13 @@ System.out.println("Enter your choice:");
 choice=br.nextInt();
 switch(choice)
 {
-case 1: System.out.println("Enter name:");
+case 1:
+System.out.println("Enter name:");
 str=br.next();
 v.addElement(str);
 break;
 case 2:
 System.out.println("Current List:");
-
 for(i=0;i<=v.size()-1;i++)
 {
 System.out.println(v.elementAt(i));
@@ -213,7 +210,17 @@ System.out.println("Invalid choice");
 }
 }
 
-*/abstract methods*/
+
+------------------------------------------------------
+
+
+6.Write programs to explain concept of abstract methods
+1. Define abstract superclass Figure
+2. Declare an abstract method area() in superclass
+3. Define subclass Rectangle
+
+Program:
+
 import java.lang.*;
 abstract class Figure
 {
@@ -226,7 +233,6 @@ dim2=b;
 abstract double area();
 }
 class Rectangle extends Figure
-
 {
 double area;
 Rectangle(double a,double b)
@@ -244,8 +250,45 @@ class Figure_abstract
 public static void main(String args[])
 {
 Figure f;
-Rectangle r= new Rectangle(5,5);
+Rectangle r=new Rectangle(5,5);
 f=r;
 System.out.println("Area of Rectangle is:"+f.area());
+}
+}
+
+
+------------------------------------------------------------
+
+
+7. WAP to define interface Department and Exam. Implement class
+Student which implements these interfaces.
+
+Program:
+
+interface Department
+{
+int m1=18,m2=19,m3=12;
+}
+interface Exam extends Department
+{
+int s1=67,s2=45,s3=71;
+void total_marks();
+}
+class Student_inter implements Department,Exam
+{
+public void total_marks()
+{
+int ds,cg,dlca;
+ds=m1+s1;
+cg=m2+s2;
+dlca=m3+s3;
+System.out.println("Marks of DS"+ds);
+System.out.println("Marks of CG"+cg);
+System.out.println("Marks of DLCA"+dlca);
+}
+public static void main(String args[])
+{
+Student_inter s=new Student_inter();
+s.total_marks();
 }
 }
